@@ -1,0 +1,17 @@
+body{
+    background: #EEF9BF;
+}
+
+.title{
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 65px;
+    letter-spacing: -0.004em;
+    color: #75B79E;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
+}
