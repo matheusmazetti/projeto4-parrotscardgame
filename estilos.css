@@ -15,3 +15,42 @@ body{
     align-items: flex-start;
     margin-top: 40px;
 }
+
+.cards{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    width: 117px;
+    height: 146px;
+    position: relative;
+    margin: 15px
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.back-face {
+    transform: rotateY(180deg);
+}
+
+.turn-back {
+    transform: rotateY(0deg);
+}
+
+.turn-front {
+    transform: rotateY(-180deg);
+}
