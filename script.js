@@ -20,11 +20,11 @@ function cardSelection(){
     for(let i = 0; i < numCards; i++){
         let element = document.querySelector(".cards");
         element.innerHTML += `
-        <div class="card" onclick="turn(this)">
-            <div class="front-face face">
+        <div class="card" onclick="turn(this)" data-identifier="card">
+            <div class="front-face face" data-identifier="back-face">
                 <img src="front.png" />
             </div>
-            <div class="back-face face">
+            <div class="back-face face" data-identifier="front-face">
                 <img src="${gifsShuffle[i]}"/>
             </div>
         </div>`
