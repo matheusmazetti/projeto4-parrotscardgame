@@ -1,7 +1,9 @@
 body{
     background: #EEF9BF;
 }
-
+.disable-click{
+    pointer-events: none;
+}
 .title{
     font-family: Roboto;
     font-weight: 700;
@@ -43,6 +45,11 @@ body{
     transform-style: preserve-3d;
 }
 
+.face img{
+    width: 100px;
+    height: 100px;
+}
+
 .back-face {
     transform: rotateY(180deg);
 }
@@ -53,4 +60,13 @@ body{
 
 .turn-front {
     transform: rotateY(-180deg);
+}
+
+.timer{
+    font-size: 50px;
+    color: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 10px;
 }
