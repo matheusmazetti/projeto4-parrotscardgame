@@ -39,6 +39,7 @@ function turn(chosen){
     let elementFront = chosen.querySelector(".face");
     elementFront.classList.add("turn-front");
     selected.push(chosen.querySelector(".back-face img").getAttribute("src"));
+    chosen.setAttribute("onclick", "alert('Você já selecionou essa carta')");
 
     if(firstSelected == null){
         firstSelected = chosen;
@@ -54,6 +55,8 @@ function testSelection(){
     }
 }
 function turnBack(){
+    firstSelected.setAttribute("onclick", "turn(this)");
+    secondSelected.setAttribute("onclick", "turn(this)");
     let firstElement = firstSelected.querySelector(".back-face");
     firstElement.classList.remove("turn-back");
     let secondElement = firstSelected.querySelector(".face");
@@ -72,6 +75,8 @@ function cardCompare(){
     if(firstImg.getAttribute("src") != secondImg.getAttribute("src")){
         setTimeout(turnBack, 1000);
     } else {
+        firstSelected.setAttribute("onclick", "alert('Você já descobriu este par')");
+        secondSelected.setAttribute("onclick", "alert('Você já descobriu este par')");
         firstSelected = null;
         secondSelected = null;
     }
