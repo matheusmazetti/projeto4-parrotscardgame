@@ -6,7 +6,7 @@ let firstSelected = null;
 let secondSelected = null;
 let plays = 0;
 let endCounter = 0;
-let clock = null;
+let clock = 0;
 let time = null;
 let tempo = null;
 function cardSelection(){
@@ -49,21 +49,22 @@ function turn(chosen){
 
     if(firstSelected == null){
         firstSelected = chosen;
-    }else{
+        if(clock == 0){
+            startTime();    
+            console.log("tempo")
+        } 
+    } else {
         secondSelected = chosen;
     }
-    
-    if(clock == null){
-        tempo = setInterval(timer, 1000);
-        console.log(tempo);
-    }
-    
+
+        
 }
 
 function testSelection(){
     if (secondSelected != null){
         cardCompare();
     }
+    
 }
 function turnBack(){
     firstSelected.setAttribute("onclick", "turn(this)");
@@ -127,4 +128,7 @@ function timer(){
     clock.innerHTML = parseInt(clock.innerHTML) + 1;
 }
 
+function startTime(){
+    tempo = setInterval(timer, 1000);
+}
 cardSelection();
