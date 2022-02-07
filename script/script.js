@@ -25,10 +25,10 @@ function cardSelection(){
         element.innerHTML += `
         <div class="card" onclick="turn(this)" data-identifier="card">
             <div class="front-face face" data-identifier="back-face">
-                <img src="front.png" />
+                <img src="assets/front.png" />
             </div>
             <div class="back-face face" data-identifier="front-face">
-                <img src="${gifsShuffle[i]}"/>
+                <img src="assets/${gifsShuffle[i]}"/>
             </div>
         </div>`
     }
