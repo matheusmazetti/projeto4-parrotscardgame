@@ -62,7 +62,7 @@ body{
     transform: rotateY(-180deg);
 }
 
-.timer{
+.time{
     font-size: 50px;
     color: red;
     position: absolute;

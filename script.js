@@ -6,6 +6,9 @@ let firstSelected = null;
 let secondSelected = null;
 let plays = 0;
 let endCounter = 0;
+let clock = null;
+let time = null;
+let tempo = null;
 function cardSelection(){
  numCards = parseInt(prompt("Quantas cartas você deseja? (números de 4 a 14)"));
     while  (numCards > 14 || numCards < 4 || numCards%2 != 0){
@@ -48,6 +51,11 @@ function turn(chosen){
         firstSelected = chosen;
     }else{
         secondSelected = chosen;
+    }
+    
+    if(clock == null){
+        tempo = setInterval(timer, 1000);
+        console.log(tempo);
     }
     
 }
@@ -100,13 +108,23 @@ function deselect(){
 function endGame(){
     let restart = null;
     if (endCounter == numCards/2){
-        alert(`Você ganhou em ${plays} jogadas!`);
+        clearInterval(tempo);
+        alert(`Você ganhou em ${plays} jogadas e ${clock.innerHTML} segundos!`);
         restart = prompt("Gostaria de jogar novamente [s - sim/n - não]");
+        if (restart == "s"){
+            location.reload();
+            clearInterval(tempo);
+        } else if(restart == "n"){
+            alert("Obrigado por jogar");
+            clearInterval(tempo);
+        }
     }
-    if (restart == "s"){
-        location.reload();
-    } else if(restart == "n"){
-        alert("Obrigado por jogar");4
-    }
+    
 }
+
+function timer(){
+    clock = document.querySelector(".time");
+    clock.innerHTML = parseInt(clock.innerHTML) + 1;
+}
+
 cardSelection();
