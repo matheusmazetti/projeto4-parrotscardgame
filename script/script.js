@@ -97,7 +97,7 @@ function cardCompare(){
         secondSelected = null;
         disableClick.classList.remove("disable-click");
         endCounter++;
-        endGame();
+        setTimeout(endGame, 10);
     }
 }
 
